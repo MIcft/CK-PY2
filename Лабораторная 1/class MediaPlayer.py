@@ -2,14 +2,15 @@ class MediaPlayer:
     """
     Класс MediaPlayer предназначен для воспроизведения видео из файла
     """
-    def __init__(self, type: str):
+
+    def __init__(self, file_extension: str):
         """
          Создание и подготовка к работе объекта "MediaPlayer"
-        :param type: Расширение файла
+        :param file_extension: Расширение файла
         """
-        if not isinstance(type, str):
+        if not isinstance(file_extension, str):
             raise TypeError("Расширение файла должно быть типа str")
-        self.type = type
+        self.type = file_extension
         self.filename = None
 
     def open(self, file):
@@ -26,10 +27,6 @@ class MediaPlayer:
         Метод воспроизводит видео
         '''
         print(f'Воспроизведение {self.filename}.{self.type}')
-if __name__ == '__main__':
-    media1 = MediaPlayer('mp3')
-    media2 = MediaPlayer('avi')
-    media1.open('filemedia1')
-    media2.open('filemedia2')
-    media1.play()
-    media2.play()
+
+
+

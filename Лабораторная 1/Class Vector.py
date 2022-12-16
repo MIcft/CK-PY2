@@ -1,9 +1,12 @@
 import doctest
 import math
+
+
 class Vector:
     '''
     class Vector описывает 3 мерный вектор по координатам x, y, z
     '''
+
     def __init__(self, x: int | float, y: int | float, z: int | float):
         """
         Создание и подготовка к работе объекта "Вектор"
@@ -17,13 +20,13 @@ class Vector:
         self.y = y
         self.z = z
 
-    def getLenght(self):
+    def get_length(self):
         '''
         Метод для нахождения длины вектора
         :return: возращает длину вектора
         '''
-        getLength = abs(math.sqrt(self.x ** 2 + self.y ** 2 + self.z ** 2))
-        return getLength
+        self.length = abs(math.sqrt(self.x ** 2 + self.y ** 2 + self.z ** 2))
+        return self.length
 
     def add(self, x, y, z):
         '''
@@ -34,15 +37,13 @@ class Vector:
 
          Примеры:
         >>> v2 = Vector(1, 2, 3)
-        >>> print(v2.getLenght())
+        >>> print(v2.get_length())
         3.7416573867739413
         >>> v2.add(2, 3, 4)
-        >>> print(v2.getLenght())
+        >>> print(v2.get_length())
         9.1104335791443
         '''
         self.x += x
         self.y += y
         self.z += z
 
-if __name__ == "__main__":
-    doctest.testmod()
